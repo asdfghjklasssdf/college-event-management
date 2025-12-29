@@ -1,0 +1,96 @@
+/* Make entire page full screen */
+.calendar-fullpage {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* ✅ full screen */
+  overflow: hidden; /* ✅ no scrollbars */
+}
+
+/* Header stays fixed height */
+.calendar-header {
+  text-align: center;
+  padding: 25px 20px;
+  background: linear-gradient(135deg, #007C91, #00B5C8, #009CA6, #00D2E0);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.calendar-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.calendar-header p {
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+/* Calendar fills remaining viewport height */
+.calendar-fullscreen {
+  flex: 1;
+  background: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 20px;
+  margin: 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Calendar adjustments */
+.fc {
+  height: 100%;
+}
+
+.fc .fc-daygrid-event {
+  border-radius: 6px;
+  padding: 4px 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.fc .fc-daygrid-event:hover {
+  transform: scale(1.03);
+  box-shadow: 0 3px 10px rgba(34, 197, 94, 0.3);
+}
+
+.fc .fc-toolbar-title {
+  color: #111827;
+  font-weight: 700;
+}
+
+.event-time {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+/* Toolbar buttons */
+.fc .fc-button {
+  background: #16a34a;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  padding: 6px 10px;
+  transition: background 0.3s;
+}
+
+.fc .fc-button:hover {
+  background: #15803d;
+}
+
+/* Highlight today */
+.fc .fc-day-today {
+  background-color: #f0fdf4 !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .calendar-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .calendar-header p {
+    font-size: 0.9rem;
+  }
+}

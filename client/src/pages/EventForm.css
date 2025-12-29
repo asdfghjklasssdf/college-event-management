@@ -1,0 +1,210 @@
+.eventform-container {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #007C91, #00B5C8, #009CA6, #00D2E0);
+  background-size: 300% 300%;
+  animation: gradientShift 10s ease-in-out infinite;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+/* ✨ Gradient Animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.eventform-hero {
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.eventform-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.eventform-hero p {
+  font-size: 1.1rem;
+  color: #f9fafb;
+}
+
+.eventform-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.eventform-card input,
+.eventform-card select,
+.eventform-card textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.eventform-card input:focus,
+.eventform-card select:focus,
+.eventform-card textarea:focus {
+  border-color: #00B5C8;
+  box-shadow: 0 0 0 3px rgba(0, 181, 200, 0.2);
+  outline: none;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.image-preview {
+  display: flex;
+  justify-content: center;
+}
+
+.image-preview img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #00B5C8;
+  margin-top: 10px;
+}
+
+.eventform-card button {
+  background: #00B5C8;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.eventform-card button:hover {
+  background: #009CA6;
+}
+
+.message {
+  text-align: center;
+  color: #009CA6;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .eventform-card {
+    padding: 25px;
+  }
+}
+/* Add vertical spacing between all form elements */
+.eventform-card > * {
+  margin-bottom: 14px;
+}
+
+/* Increase gap inside input groups */
+.grid-2,
+.grid-3 {
+  gap: 18px;
+}
+
+/* More space below textarea */
+.eventform-card textarea {
+  min-height: 110px;
+  margin-bottom: 12px;
+}
+
+/* Extra spacing before submit button */
+.eventform-card button {
+  margin-top: 10px;
+}
+
+/* Increase spacing between hero and form */
+.eventform-hero {
+  margin-bottom: 48px;
+}
+.eventform-card {
+  gap: 18px;
+}
+
+.eventform-card input,
+.eventform-card select,
+.eventform-card textarea {
+  padding: 14px;
+}
+.eventform-card button {
+  padding: 14px;
+  font-size: 1.1rem;
+}
+.eventform-hero h1 {
+  font-size: 2.8rem;
+}
+.eventform-hero p {
+  font-size: 1.2rem;
+}
+.eventform-card textarea {
+  min-height: 130px;
+}
+.eventform-card > * {
+  margin-bottom: 16px;
+}
+.grid-2,
+.grid-3 {
+  gap: 20px;
+}
+
+/* Slightly larger image preview */
+.image-preview img {
+  width: 180px;
+  height: 180px;
+} 
+@media (max-width: 480px) {
+  .eventform-card {
+    padding: 20px;
+  }
+  .eventform-hero h1 {
+    font-size: 2.2rem;
+  }
+  .eventform-hero p {
+    font-size: 1rem;
+  }
+}
+
+
+
+

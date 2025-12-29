@@ -1,0 +1,39 @@
+.eventlist-container {
+  padding: 20px;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 20px;
+}
+
+.event-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 12px;
+  background: #fafafa;
+  color: #009CA6;
+}
+
+.event-card h2 {
+  margin-bottom: 10px;
+}
+
+.event-card button {
+  padding: 8px 14px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background: #009CA6;
+  color: white;
+}
+
+.delete-btn {
+  background: #009CA6;
+  color: white;
+}

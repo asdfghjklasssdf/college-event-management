@@ -1,0 +1,201 @@
+/* ========================================================= */
+/* PAGE WRAPPER — CENTER + ANIMATION                        */
+/* ========================================================= */
+.profile-wrapper {
+  display: flex;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 20px;
+  flex-wrap: wrap;
+  animation: fadeIn 0.4s ease;
+}
+
+/* ========================================================= */
+/* LEFT — PROFILE CARD                                       */
+/* ========================================================= */
+.profile-card {
+  width: 320px;
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 16px;
+
+  box-shadow: 0 6px 16px rgba(0,0,0,0.10);
+  border: 1px solid #e5e5e5;
+
+  text-align: center;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* PROFILE PHOTO */
+.profile-photo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  border: 4px solid #009bff;
+  box-shadow: 0 4px 12px rgba(0,155,255,0.3);
+
+  margin-bottom: 15px;
+}
+
+/* NAME + TEXT */
+.profile-card h2 {
+  font-size: 22px;
+  margin: 10px 0 5px;
+  color: #111;
+  font-weight: 700;
+}
+
+.profile-card p {
+  margin: 4px 0;
+  color: #555;
+  font-size: 15px;
+}
+
+/* UPLOAD BUTTON */
+.upload-btn {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 10px 14px;
+
+  background: #009CA6;
+  color: white;
+
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+
+  box-shadow: 0 4px 12px rgba(0,155,255,0.25);
+  transition: 0.25s ease;
+}
+
+.upload-btn:hover {
+  background: #009CA6;
+  transform: scale(1.03);
+}
+
+.upload-btn input {
+  display: none;
+}
+
+/* ========================================================= */
+/* RIGHT — PROFILE EDIT FORM                                 */
+/* ========================================================= */
+.profile-container {
+  flex: 1;
+
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+
+  border: 1px solid #e5e5e5;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* TITLE */
+.profile-container h1 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  color: #111;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* INPUTS */
+.profile-container input {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 8px 0;
+  border: 1px solid #cfd4da;
+  border-radius: 10px;
+  font-size: 16px;
+
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  background: #ffffff;
+  color: #222;
+}
+
+/* Focus */
+.profile-container input:focus {
+  border-color: #009BFF;
+  outline: none;
+  box-shadow: 0 0 6px rgba(0,155,255,0.35);
+}
+
+/* Disabled input */
+.profile-container input:disabled {
+  background: #f0f3f6;
+  color: #777;
+  cursor: not-allowed;
+}
+
+/* SUBMIT BUTTON */
+.profile-container button {
+  width: 100%;
+  padding: 14px;
+
+  background: #009CA6;
+  color: white;
+
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  margin-top: 15px;
+  cursor: pointer;
+
+  font-weight: 700;
+
+  box-shadow: 0 6px 14px rgba(0,155,255,0.35);
+  transition: 0.25s ease;
+}
+
+.profile-container button:hover {
+  background: #007bff;
+  transform: scale(1.03);
+}
+
+/* PASSWORD FORM */
+.password-form input {
+  margin-top: 10px;
+}
+
+.password-form button {
+  margin-top: 15px;
+}
+
+/* ========================================================= */
+/* ANIMATION                                                 */
+/* ========================================================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* ========================================================= */
+/* RESPONSIVE                                                */
+/* ========================================================= */
+@media (max-width: 768px) {
+  .profile-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .profile-card {
+    width: 92%;
+  }
+
+  .profile-container {
+    width: 100%;
+  }
+}

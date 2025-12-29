@@ -1,0 +1,225 @@
+/* ----------------------------------------------------------
+   FULL-PAGE GRADIENT BACKGROUND (same as dashboard-hero)
+---------------------------------------------------------- */
+.notify-page {
+  min-height: 100vh;
+  padding: 60px 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  background: linear-gradient(135deg, #009CA6, #00B5C8, #00D2E0);
+  background-size: 300% 300%;
+  animation: heroGradientShift 12s ease-in-out infinite;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft white glow overlay */
+.notify-page::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 160%;
+  height: 160%;
+  background: radial-gradient(circle, rgba(255,255,255,0.18), transparent 60%),
+              radial-gradient(circle, rgba(255,255,255,0.1), transparent 70%);
+  animation: heroGlowMove 14s linear infinite;
+  z-index: 0;
+}
+
+/* ----------------------------------------------------------
+   MAIN GLASS CARD
+---------------------------------------------------------- */
+.notify-container {
+  width: 100%;
+  max-width: 750px;
+  padding: 40px 30px;
+
+  background: rgba(255,255,255,1);
+  backdrop-filter: blur(14px);
+
+  border-radius: 20px;
+  border: 2px solid rgba(255,255,255,0.4);
+
+  box-shadow: 0 0 25px rgba(255,255,255,0.18),
+              0 12px 40px rgba(0,0,0,0.25),
+              inset 0 0 18px rgba(255,255,255,0.12);
+
+  position: relative;
+  z-index: 10;
+
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Animated Neon Border */
+.notify-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+
+  padding: 2px;
+  background: linear-gradient(135deg, #00e0ff, #00ffc3, #00aaff, #00ffe7);
+  background-size: 400% 400%;
+  animation: neonBorder 8s ease infinite;
+
+  mask: linear-gradient(white, white) content-box, linear-gradient(white, white);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ----------------------------------------------------------
+   TITLE
+---------------------------------------------------------- */
+.notify-container h1 {
+  text-align: center;
+  font-size: 32px;
+  color: #009CA6;
+  margin-bottom: 25px;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+
+/* ----------------------------------------------------------
+   EVENT SELECT (Dropdown)
+---------------------------------------------------------- */
+.event-select {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+
+  background: rgba(125, 157, 161, 0.22);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255,255,255,0.55);
+  box-shadow: inset 0 0 12px rgba(0,0,0,0.25),
+              0 0 18px rgba(125, 157, 161, 0.22);
+
+  color: #009CA6;
+  font-size: 17px;
+  font-weight: 700;
+
+  margin-bottom: 20px;
+  transition: 0.25s ease;
+}
+
+/* Hover + Focus */
+.event-select:hover {
+  background: rgba(0,150,170,0.3);
+  transform: scale(1.02);
+  box-shadow: 0 0 25px #f0f0f0;
+}
+
+.event-select:focus {
+  outline: none;
+  background: rgba(0,170,195,0.35);
+  border-color: rgba(0,255,255,0.9);
+  box-shadow: 0 0 30px rgba(0,255,255,0.9);
+}
+
+/* ----------------------------------------------------------
+   TEXTAREA
+---------------------------------------------------------- */
+.notify-container textarea {
+  width: 95%;
+  height: 150px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  resize: none;
+
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.45);
+  border-radius: 14px;
+
+  backdrop-filter: blur(12px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+  transition: 0.25s ease;
+}
+
+.notify-container textarea:focus {
+  outline: none;
+  background: rgba(255,255,255,0.3);
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(0,200,255,0.45);
+}
+
+/* ----------------------------------------------------------
+   SEND BUTTON
+---------------------------------------------------------- */
+.notify-container button {
+  width: 100%;
+  padding: 15px;
+
+  background: linear-gradient(135deg, #009CA6, #00B5C8);
+  background-size: 300% 300%;
+  animation: btnShift 6s ease infinite;
+
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+
+  box-shadow: 0 6px 20px rgba(0,255,230,0.6);
+  transition: 0.3s ease;
+}
+
+.notify-container button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 10px 30px rgba(0,255,230,0.9);
+}
+
+/* ----------------------------------------------------------
+   SUCCESS MESSAGE
+---------------------------------------------------------- */
+.success {
+  margin-top: 20px;
+  padding: 12px;
+
+  font-size: 18px;
+  color: #009CA6;
+
+  background: rgba(0, 70, 0, 0.35);
+  border-radius: 12px;
+  text-align: center;
+
+  backdrop-filter: blur(8px);
+}
+
+/* ----------------------------------------------------------
+   ANIMATIONS
+---------------------------------------------------------- */
+@keyframes heroGradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes heroGlowMove {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(3%,3%); }
+  100% { transform: translate(0,0); }
+}
+
+@keyframes neonBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes btnShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; }
+}

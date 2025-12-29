@@ -1,0 +1,107 @@
+/* ====================================================== */
+/* GLOBAL SCROLL FIX */
+/* ====================================================== */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-y: auto;
+  font-family: "Inter", sans-serif;
+}
+
+/* ====================================================== */
+/* PAGE WRAPPER */
+/* ====================================================== */
+
+.add-venue-page {
+  min-height: 100vh;
+  padding: 20px;
+
+  background: linear-gradient(135deg, #009CA6, #00B5C8, #00D2E0);
+  background-size: 300% 300%;
+  animation: bgShift 12s ease-in-out infinite;
+
+  color: white; /* Page title */
+}
+
+/* Animated gradient effect */
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ====================================================== */
+/* FORM CARD */
+/* ====================================================== */
+
+.add-venue-container {
+  max-width: 600px;
+  margin: 30px auto 0 auto;
+
+  background: rgba(255, 255, 255, 0.92);
+  padding: 30px;
+  border-radius: 14px;
+
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+  backdrop-filter: blur(6px);
+
+  color: black;
+  text-align: center;
+}
+
+/* ====================================================== */
+/* FORM */
+/* ====================================================== */
+
+.add-venue-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.add-venue-form input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  outline: none;
+  transition: 0.2s ease-in-out;
+}
+
+.add-venue-form input:focus {
+  border-color: #008f9a;
+  box-shadow: 0 0 6px rgba(0, 156, 166, 0.4);
+}
+
+/* ====================================================== */
+/* BUTTON */
+/* ====================================================== */
+
+button {
+  background: #007f89;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+}
+
+button:hover {
+  background: #006a72;
+}
+
+/* ====================================================== */
+/* SUCCESS/ERROR MESSAGE */
+/* ====================================================== */
+
+.msg {
+  margin-top: 10px;
+  font-weight: bold;
+  background: rgba(0, 255, 0, 0.18);
+  padding: 8px;
+  border-radius: 8px;
+  color: #0a4f08;
+}

@@ -1,0 +1,206 @@
+/* ========================================================= */
+/* MAIN DASHBOARD WRAPPER                                   */
+/* ========================================================= */
+.dept-dashboard {
+  padding: 20px;
+  animation: fadeIn 0.3s ease-in-out;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #009CA6, #00B5C8);
+}
+
+/* ========================================================= */
+/* HEADER                                                    */
+/* ========================================================= */
+.header {
+  text-align: center;
+  margin: 20px auto 25px;
+}
+
+.header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.header p {
+  font-size: 18px;
+  color: #555;
+}
+
+.role-tag {
+  background: #009CA6;
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* ========================================================= */
+/* SUMMARY CARDS — WHITE CARDS WITH TEAL BORDERS            */
+/* ========================================================= */
+
+.dept-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.dept-card {
+  background: #ffffff !important;
+  padding: 22px 20px;
+  border-radius: 14px;
+  text-align: center;
+  color: #009CA6;
+  font-weight: 600;
+
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.dept-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.dept-card h2 {
+  font-size: 38px;
+  margin-bottom: 8px;
+  font-weight: 800;
+  color: #009CA6;
+}
+
+/* LEFT BORDER COLORS */
+.dept-card.blue   { border-left: 8px solid #009BFF; }
+.dept-card.green  { border-left: 8px solid #28a745; }
+.dept-card.purple { border-left: 8px solid #6f42c1; }
+.dept-card.orange { border-left: 8px solid #fd7e14; }
+
+/* ========================================================= */
+/* TODAY’S EVENT BOX                                         */
+/* ========================================================= */
+.today-event-box {
+  max-width: 600px;
+  margin: 20px auto;
+  background: #ffffff;
+  padding: 20px;
+  border-left: 6px solid #009CA6;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.today-event-box h3 {
+  margin-bottom: 5px;
+  font-size: 22px;
+  color: #009CA6;
+}
+
+/* ========================================================= */
+/* UPCOMING EVENTS                                           */
+/* ========================================================= */
+.upcoming-container {
+  max-width: 1100px;
+  margin: 30px auto;
+}
+
+.upcoming-container h2 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* UPCOMING CARDS */
+.upcoming-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.upcoming-card {
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  border-left: 5px solid #007bff;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.upcoming-card:hover {
+  transform: translateY(-5px);
+}
+
+.upcoming-card h4 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: #009CA6;
+}
+
+.upcoming-card p {
+  color: #009CA6;
+  font-size: 14px;
+}
+
+/* ========================================================= */
+/* QUICK LINKS                                               */
+/* ========================================================= */
+.quick-links {
+  max-width: 1100px;
+  margin: 35px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.quick-card {
+  background: #ffffff;
+  padding: 16px;
+  text-align: center;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #009CA6;
+  font-weight: 600;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+  transition: 0.25s ease;
+}
+
+.quick-card:hover {
+  transform: translateY(-6px);
+  background: white;
+  color: #90c5c9;
+}
+
+/* ========================================================= */
+/* ANIMATIONS                                                */
+/* ========================================================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* ========================================================= */
+/* RESPONSIVE                                                */
+/* ========================================================= */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 26px;
+  }
+
+  .dept-card h2 {
+    font-size: 32px;
+  }
+}

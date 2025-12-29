@@ -1,0 +1,130 @@
+/* ========================== */
+/* DEPARTMENT CONTAINER (Stable + No Movement) */
+/* ========================== */
+.dept-container {
+  max-width: 650px;
+  margin: 80px auto;
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: "Inter", sans-serif;
+  position: relative;
+  z-index: 2;
+}
+
+/* No hover movement */
+.dept-container:hover {
+  transform: none !important;
+}
+
+/* ========================== */
+/* BACKGROUND (Animated Glow, But Doesn't Move Container) */
+/* ========================== */
+.backgroundcontainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  /* Dashboard glowing background */
+  background: linear-gradient(135deg, #009CA6, #00B5C8, #00D2E0);
+  background-size: 300% 300%;
+  animation: bgShift 12s ease-in-out infinite;
+
+  /* Glow layers */
+  overflow: hidden;
+  z-index: 0;
+}
+
+.backgroundcontainer::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  left: -30%;
+  width: 160%;
+  height: 160%;
+  background: radial-gradient(circle at 20% 40%, rgba(255,255,255,0.18), transparent 50%),
+              radial-gradient(circle at 80% 60%, rgba(255,255,255,0.12), transparent 50%);
+  animation: glowMove 14s linear infinite;
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes glowMove {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(3%, 3%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* ========================== */
+/* FORM */
+/* ========================== */
+.dept-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.dept-form input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.dept-form input:focus {
+  border-color: #00b5c8;
+  box-shadow: 0 0 0 3px rgba(0, 178, 195, 0.25);
+  outline: none;
+}
+
+.dept-form button {
+  background: linear-gradient(135deg, #009CA6, #00B5C8);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 156, 166, 0.25);
+}
+
+.dept-form button:hover {
+  background: #00D2E0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 156, 166, 0.35);
+}
+
+/* ========================== */
+/* LIST */
+/* ========================== */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+li {
+  padding: 12px 15px;
+  margin: 6px 0;
+  border-left: 4px solid #00b5c8;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #374151;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+}
+
+li:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateX(3px);
+}

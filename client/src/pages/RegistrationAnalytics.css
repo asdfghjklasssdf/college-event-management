@@ -1,0 +1,129 @@
+/* ====================================================== */
+/* GLOBAL SCROLL FIX */
+/* ====================================================== */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+}
+
+/* ====================================================== */
+/* PAGE CONTAINER */
+/* ====================================================== */
+.analytics-page {
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+  color: white; /* keep titles white */
+  overflow-y: auto; /* enables scrolling */
+}
+
+.analytics-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ====================================================== */
+/* BACKGROUND THEME */
+/* ====================================================== */
+
+.backgroundcontainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background: linear-gradient(135deg, #009CA6, #00B5C8, #00D2E0);
+  background-size: 300% 300%;
+  animation: bgShift 12s ease-in-out infinite;
+
+  z-index: -1;
+  pointer-events: none; /* prevents scroll blocking */
+}
+
+.backgroundcontainer::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  left: -30%;
+  width: 160%;
+  height: 160%;
+  background: radial-gradient(circle at 20% 40%, rgba(255,255,255,0.18), transparent 50%),
+              radial-gradient(circle at 80% 60%, rgba(255,255,255,0.12), transparent 50%);
+  animation: glowMove 14s linear infinite;
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes glowMove {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(3%, 3%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* ====================================================== */
+/* SUMMARY CARDS */
+/* ====================================================== */
+
+.stats-summary {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.stat-card {
+  background: white;
+  color: black;
+  padding: 25px;
+  width: 240px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+/* ====================================================== */
+/* CHARTS */
+/* ====================================================== */
+
+.charts {
+  display: flex;
+  flex-direction: column; /* ONE chart per row */
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.chart-box {
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+/* ====================================================== */
+/* RECHARTS TEXT FIX */
+/* ====================================================== */
+
+.recharts-text {
+  fill: #000 !important;
+}
+
+.recharts-tooltip-label,
+.recharts-tooltip-item {
+  color: #000 !important;
+}
+
+.recharts-pie-label-text {
+  fill: #000 !important;
+}
+
+.recharts-legend-item-text {
+  color: #000 !important;
+}
