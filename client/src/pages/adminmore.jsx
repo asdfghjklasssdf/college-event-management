@@ -21,7 +21,7 @@ export default function AdminMore() {
   Edit Event
 </Link>
 
-      <Link to="/deptadd-event" className="btn-link">Add Event</Link>
+      <Link to="/deptadd-event" className="btn-link">Add Event Departmentwise</Link>
       <Link to="/deptlist-event" className="btn-link">List Events</Link>
       <Link to="/add-department" className="btn-link">Add Department</Link>
       <Link to="/analysis" className="btn-link">Analysis</Link>

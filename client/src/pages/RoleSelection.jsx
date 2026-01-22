@@ -17,7 +17,7 @@ const RoleSelection = () => {
           </Link>
 
           {/* Admin */}
-          <Link to="/login" className="role-btn admin">
+          <Link to="/Adminlogin" className="role-btn admin">
             Admin
           </Link>
 

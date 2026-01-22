@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"; // 🟩 added useEffect
 import axios from "axios";
 import "./Signup.css";
 
-const Signup = () => {
+const Adminsignup = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -18,6 +18,14 @@ const Signup = () => {
 // 🟩 NEW: department state
   const [departments, setDepartments] = useState([]);
 
+  useEffect(() => {
+    const navbars = document.querySelectorAll("nav");
+    navbars.forEach(nav => (nav.style.display = "none"));
+
+    return () => {
+      navbars.forEach(nav => (nav.style.display = "block"));
+    };
+  }, []);
   // 🟩 Fetch department list from backend when component mounts
   useEffect(() => {
     axios
@@ -128,8 +136,8 @@ const Signup = () => {
 
           <select name="role" onChange={handleChange} required>
             <option value="">Select Role</option>
-            <option value="Student">Student</option>
-           
+            <option value="Coordinator">Coordinator</option>
+            <option value="Admin">Admin</option>
           </select>
 
           <input
@@ -150,4 +158,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Adminsignup;

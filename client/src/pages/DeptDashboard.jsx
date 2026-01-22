@@ -79,7 +79,6 @@ if (!user) {
   return (
     <div className="dept-dashboard">
       {/* HEADER */}
-      <DepartmentNavbar /> 
 
       <div className="header">
         <h1>Welcome {user.fullName}</h1>

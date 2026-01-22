@@ -23,8 +23,8 @@ const DepartmentNavbar = () => {
   return (
     <nav className="navbar">
       <div className="nav-container">
-        
-        {/* LOGO / TITLE */}
+
+        {/* LOGO / TITLE "/deptCoordinatordashboard"*/}
         <Link to="/deptdashboard" className="nav-logo">
           <span>Department Panel</span>
         </Link>
@@ -54,6 +54,11 @@ const DepartmentNavbar = () => {
           <Link to="/deptdownloads" className="nav-item">
             Downloads
           </Link>
+
+              <Link to="/dept/profile" className="nav-item">
+                      profile edit
+                    </Link>
+          
 
           {/* Logout */}
          <button className="logout-btn" onClick={handleLogout}>

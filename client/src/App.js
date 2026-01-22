@@ -43,12 +43,14 @@ import Coordinatordashboard from "./pages/Coordinatordashboard";
 import PublicRoute from "./pages/PublicRoute";
 import AdminMore from "./pages/adminmore.jsx";
  // admin + coordinator navbar
+import AdminAccessRoute from "./pages/AdminAccessRoute";
 import DeptSelectEventParticipants from "./pages/DeptSelectEventParticipants";
 import RoleSelection from "./pages/RoleSelection";
 import StaticDashboard from "./pages/StaticDashboard";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import DeptSelectEventToEdit from "./pages/DeptSelectEventToEdit";
-
+import Adminlogin from "./pages/Adminlogin.jsx";
+import Adminsignup from "./pages/Adminsignup.jsx";
 function App() {
 
 const user = JSON.parse(sessionStorage.getItem("user"));
@@ -63,13 +65,21 @@ const user = JSON.parse(sessionStorage.getItem("user"));
   return (
     <Router>
       {/* SHOW NAVBAR ONLY IF NOT IN DEPARTMENT PORTAL */}
-    {!isDepartmentPortal && !hideNavbar && (
-        <>
-          {user?.role === "Admin" && <Navbaradmin />}
-          {user?.role === "Coordinator" && <CoordinatorNavbar />}
-          {user?.role === "Student" && <Navbar />}
-        </>
-      )}
+    {/* SHOW NAVBAR */}
+{!hideNavbar && (
+  <>
+    {isDepartmentPortal ? (
+      <DepartmentNavbar />
+    ) : (
+      <>
+        {user?.role === "Admin" && <Navbaradmin />}
+        {user?.role === "Coordinator" && <CoordinatorNavbar />}
+        {user?.role === "Student" && <Navbar />}
+      </>
+    )}
+  </>
+)}
+
 
 
       <Routes>
@@ -87,15 +97,36 @@ const user = JSON.parse(sessionStorage.getItem("user"));
             </PublicRoute>
           }
         />
-        <Route path="/signup" element={<Signup />} />
+        <Route
+  path="/Adminlogin"
+  element={
+    <PublicRoute>
+      <Adminlogin />
+    </PublicRoute>
+  }
+/>
 
-        {/* STUDENT DASHBOARD */}
+        <Route 
+        path="/signup" 
+        element={            
+            <Signup />            
+          } />
+   <Route
+  path="/Adminsignup"
+  element={
+     <AdminAccessRoute allowedRoles={["Admin"]} redirectTo="/Adminlogin">
+      <Adminsignup />
+     </AdminAccessRoute>
+  }
+/>
+
+
         <Route
           path="/dashboard"
           element={
-            <ProtectedRoute allowedRoles={["Student", "Coordinator", "Admin"]}>
+            <AdminAccessRoute allowedRoles={["Student", "Coordinator", "Admin"]}>
               <Dashboard />
-            </ProtectedRoute>
+            </AdminAccessRoute>
           }
         />
 

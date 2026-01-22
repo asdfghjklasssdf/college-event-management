@@ -25,7 +25,7 @@ const DepartmentNavbar = () => {
       <div className="nav-container">
         
         {/* LOGO / TITLE */}
-        <Link to="/deptCoordinatordashboard" className="nav-logo">
+        <Link to="/deptdashboard" className="nav-logo">
           <span>Panel</span>
         </Link>
 
@@ -44,7 +44,7 @@ const DepartmentNavbar = () => {
           </Link>
 
           <Link to="/deptlist-event" className="nav-item">
-            List Events
+            List Events 
           </Link>
 
           <Link to="/deptbook-venue" className="nav-item">

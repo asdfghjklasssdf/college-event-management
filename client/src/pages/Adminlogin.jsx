@@ -5,7 +5,7 @@ import "./Login.css"; // ✅ import this file
 //import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Adminlogin = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const navigate = useNavigate();
   const handleChange = (e) => {
@@ -33,9 +33,7 @@ const handleSubmit = async (e) => {
     // Redirect based on role
       if (user.role === "Admin") {
         window.location.href = "/Dashboardadmin";
-      } else if (user.role === "Student") {
-        window.location.href = "/dashboard";
-      } else if (user.role === "Coordinator") {
+      } else  if (user.role === "Coordinator") {
         window.location.href = "/deptdashboard";
       } else {
         window.location.href = "/dashboard";
@@ -95,11 +93,11 @@ const handleSubmit = async (e) => {
 
 {/* OPTION 1 */}
 <p>
-  <a href="/login">Go to Login</a>
+  <a href="/Adminlogin">Go to Login</a>
 </p>
 
 <p>
-  <a href="/Signup">Go to Signup</a>
+  <a href="/Adminsignup">Go to Signup</a>
 </p>
 {/* OPTION 2 (Role-based Dashboard)Dashboardadmin */}
 <p>
@@ -111,12 +109,11 @@ const handleSubmit = async (e) => {
 
       if (!user) {
         alert("Please login first");
-        window.location.href = "/login";
+        window.location.href = "/Adminlogin";
         return;
       }
 
-      if (user.role === "Student") window.location.href = "/dashboard";
-      else if (user.role === "Coordinator") window.location.href = "/deptCoordinatordashboard";
+      if (user.role === "Coordinator") window.location.href = "/deptCoordinatordashboard";
       else if (user.role === "Admin") window.location.href = "/Dashboardadmin";
     }}
   >
@@ -133,4 +130,4 @@ const handleSubmit = async (e) => {
   );
 };
 
-export default Login;
+export default Adminlogin;

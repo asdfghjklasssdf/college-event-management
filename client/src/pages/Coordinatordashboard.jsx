@@ -81,7 +81,6 @@ const DeptDashboard = () => {
 
   return (
     <div className="dept-dashboard">
-      <CoordinatorNavbar />
 
       {/* HEADER */}
       <div className="header">
