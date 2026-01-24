@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./AddDepartment.css";
- import Navbar from "./Navbar";
 const AddDepartment = () => {
   const [department, setDepartment] = useState("");
   const [departments, setDepartments] = useState([]);
