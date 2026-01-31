@@ -17,9 +17,17 @@ dotenv.config();
 const app = express();
 app.use(
   cors({
-origin: true,    credentials: true,
+    origin: [
+      "http://localhost:3000",
+      "https://event-management-app-v76l.onrender.com",
+    ],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
+app.use(express.json());
 
 // allow preflight
 // Routes
