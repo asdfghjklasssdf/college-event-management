@@ -22,8 +22,7 @@ app.use(
 );
 
 // allow preflight
-app.options("*", cors());app.use(express.json());
-
+app.options("/*", cors());
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/events", eventRoutes);
