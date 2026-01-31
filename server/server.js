@@ -14,15 +14,14 @@ import path from "path";
 import { fileURLToPath } from "url";
 dotenv.config();
 
-const app = express();
+constconst app = express();
+
+// ✅ MUST come before routes
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "https://event-management-app-v76l.onrender.com",
-    ],
+    origin: true,                 // allow Render + localhost automatically
     credentials: true,
-methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
