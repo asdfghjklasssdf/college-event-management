@@ -10,16 +10,19 @@ import analyticsRoutes from "./routes/analyticsRoutes.js";
 import venueRoutes from "./routes/venueRoutes.js";
 import downloadRoutes from "./routes/downloadRoutes.js";
 import notificationRoutes from "./routes/notificationRoutes.js";
-
+import path from "path";
+import { fileURLToPath } from "url";
 dotenv.config();
 
+const app = express();
+app.use(
+  cors({
+origin: true,    credentials: true,
+  })
+);
 
-const app = express(); // ✅ MUST be before app.use
-
-// ✅ CORS (Render + localhost)
-app.use(cors());
-app.use(express.json());
-
+// allow preflight
+// Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/events", eventRoutes);
 app.use("/api/registrations", registrationRoutes);
