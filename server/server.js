@@ -17,12 +17,8 @@ dotenv.config();
 const app = express(); // ✅ MUST be before app.use
 
 // ✅ CORS (Render + localhost)
-app.use(
-  cors({
-    origin: true,
-    credentials: true,
-  })
-);
+app.use(cors());
+app.use(express.json());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/events", eventRoutes);
