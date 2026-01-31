@@ -13,14 +13,17 @@ import notificationRoutes from "./routes/notificationRoutes.js";
 
 dotenv.config();
 
+
+const app = express(); // ✅ MUST be before app.use
+
+// ✅ CORS (Render + localhost)
 app.use(
   cors({
-    origin: true,          // allow Render + localhost
+    origin: true,
     credentials: true,
   })
 );
 
-app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/events", eventRoutes);
 app.use("/api/registrations", registrationRoutes);
