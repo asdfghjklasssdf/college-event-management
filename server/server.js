@@ -13,17 +13,8 @@ import notificationRoutes from "./routes/notificationRoutes.js";
 
 dotenv.config();
 
-const app = express();
-app.use(
-  cors({
-    origin: "http://localhost:3000",
-    credentials: true,
-  })
-);
-
-// allow preflight
-app.options("/*", cors());
-// Routes
+app.use(cors());
+app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/events", eventRoutes);
 app.use("/api/registrations", registrationRoutes);
