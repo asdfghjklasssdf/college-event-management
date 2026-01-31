@@ -14,21 +14,10 @@ import path from "path";
 import { fileURLToPath } from "url";
 dotenv.config();
 
-constconst app = express();
-
-// ✅ MUST come before routes
-app.use(
-  cors({
-    origin: true,                 // allow Render + localhost automatically
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
-
+const app = express();
+app.use(cors());
 app.use(express.json());
 
-// allow preflight
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/events", eventRoutes);
